@@ -1,0 +1,69 @@
+﻿Si retorno complejo const en:
+	friend complejo const operator+(complejo const &, complejo const &);
+el const me imposibilita hacer una operacion basica como: c = (a + b)*e;
+Por que le pondria el primer const?
+
+---------------------------------------
+otra con el const:
+
+podria ser por que si una funcion recibe const y llamo a una funcion dentro de 
+esa funcion, la funcion que llamo debe tener atributos const? ver abs() y operator/
+
+------------------------------------
+
+Por que una funcion como:
+
+	friend complejo const operator+(complejo const &, complejo const &);
+
+seria friend? Me refiero a que: por ejemplo una clase transformada de fourier
+podria necesitar operator+ pero por ejemplo
+
+    double abs() const;
+
+no es friend pero también podría usarla la clase transformada de fourier. Cómo 
+discrimino las funciones friend.
+
+PD: si no es friend me tira que tiene que tener cero o un argumento.
+
+**** VER NOTA AL FINAL *****
+
+-----------------------------+
+while(cin.get(ch) && ch != '\n')
+se puede reemplazar por:
+cin.ignore()
+????????
+
+--------------------------
+por que no puedo hacer:
+ostream & racional::operator<<(std::ostream & os, const racional & r){
+
+	???? (racional::)
+
+-------------------------
+diferencia entre:
+complejo operator+(const complejo &);
+y
+friend complejo operator+(const complejo &, const complejo &);
+
+si están ambas definidas, a cual llama?
+
+**** VER NOTA AL FINAL****
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--------------------------
+The member function operatorΔ() can only be invoked from an object via the dot operator, e.g., p1.operatorΔ(p2), which is equivalent to p1 Δ p2. Clearly the left operand p1 should be an object of that particular class. Suppose that we want to overload a binary operator such as * to multiply the object p1 with an int literal, p1*5 can be translated into p1.operator*(5), but 5*p1 cannot be represented using member function. One way to deal with this problem is only allow user to write p1*5 but not 5*p1, which is not user friendly and break the rule of commutativity. Another way is to use a non-member function, which does not invoke through an object and dot operator, but through the arguments provided. For example, 5*p1 could be translated to operator+(5, p1).
+
+In brief, you cannot use member function to overload an operator if the left operand is not an object of that particular class.
