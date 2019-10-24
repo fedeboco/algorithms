@@ -1,0 +1,14 @@
+#imprime n a minusculas y toma los tiempos
+
+rm -f tiempos.csv;
+touch tiempos.csv;
+echo n, t_compresion, t_descompresion > tiempos.csv || break;
+echo -------------------------------- >> tiempos.csv || break;
+n=1; while :; do
+      n="`expr $n + 1`"; 
+      head -c 10000 </dev/urandom >/tmp/test.$n.u;
+      ./tp1.exe -i /tmp/test.$n.u -o /tmp/test.$n.d || break;
+      echo >> tiempos.csv;
+      rm -f /tmp/test.$n.*;
+      echo Ok: $n;
+done; echo Error: $n

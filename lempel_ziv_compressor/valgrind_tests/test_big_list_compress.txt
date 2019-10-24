@@ -1,0 +1,16 @@
+==380== Memcheck, a memory error detector
+==380== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==380== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==380== Command: ./tp1.exe -p compress -i ./tests/entrada_big.txt -o ./tests/salida_big.txt -m list
+==380== Parent PID: 379
+==380== 
+==380== error calling PR_SET_PTRACER, vgdb might block
+==380== 
+==380== HEAP SUMMARY:
+==380==     in use at exit: 0 bytes in 0 blocks
+==380==   total heap usage: 18 allocs, 18 frees, 755,074 bytes allocated
+==380== 
+==380== All heap blocks were freed -- no leaks are possible
+==380== 
+==380== For counts of detected and suppressed errors, rerun with: -v
+==380== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
