@@ -1,0 +1,9 @@
+/*Configuración sen.c*/
+#define MAX_POINTS 25 /*establece número de valores a la salida de la función seno*/
+#define PI 3.14159265359
+#define A 345 /*establece amplitud de la función seno*/
+#define EXIT_SUCCESS 0
+
+/*Configuración mu_law.c*/
+#define MU 255
+#define X_MAX 1.0

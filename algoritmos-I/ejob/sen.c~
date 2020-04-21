@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <math.h>
+#include "setup.h"
+
+int main(void)
+{
+	int i;
+	float val = 0;
+
+	for(i = 0; i<MAX_POINTS; i++)
+	{
+		val = A*sin(2*PI*i/MAX_POINTS);
+		printf("%f\n", val);
+	}
+	return EXIT_SUCCES;
+}
